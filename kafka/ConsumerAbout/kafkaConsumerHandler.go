@@ -3,10 +3,11 @@ package ConsumerAbout
 import (
 	"context"
 	"fmt"
+	"time"
+
 	"github.com/Shopify/sarama"
 	"github.com/jilin7105/ebase/logger"
 	"github.com/jilin7105/ebase/util/LinkTracking"
-	"time"
 )
 
 // 定义消费者组的处理器
@@ -37,6 +38,9 @@ func (h ConsumerGroupHandler) ConsumeClaim(sess sarama.ConsumerGroupSession, cla
 	for msg := range claim.Messages() {
 		requestID := ""
 
+		// Start timer
+		startTime := time.Now()
+
 		if h.ActionMessages != nil {
 
 			//从 kafka 数据header 中获取requestID
@@ -49,10 +53,9 @@ func (h ConsumerGroupHandler) ConsumeClaim(sess sarama.ConsumerGroupSession, cla
 			}
 			ctx := context.WithValue(context.Background(), "EbaseRequestID", requestID)
 
-			// Start timer
-			startTime := time.Now()
-
+			logger.Infow("ActionMessages start", "time", startTime)
 			err := h.ActionMessages(msg, ctx)
+			logger.Infow("ActionMessages end", "use", time.Since(startTime))
 			if err != nil {
 				logger.Info("处理消息失败:%s", err.Error())
 			}
@@ -73,7 +76,9 @@ func (h ConsumerGroupHandler) ConsumeClaim(sess sarama.ConsumerGroupSession, cla
 				data.Send()
 			}
 		}
+		logger.Infow("ActionMessages MarkMessage start", "use", time.Since(startTime))
 		sess.MarkMessage(msg, "")
+		logger.Infow("ActionMessages MarkMessage end", "use", time.Since(startTime))
 	}
 	return nil
 }
