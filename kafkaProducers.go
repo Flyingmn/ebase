@@ -1,11 +1,12 @@
 package ebase
 
 import (
-	"github.com/Shopify/sarama"
-	"github.com/jilin7105/ebase/config"
-	"github.com/jilin7105/ebase/kafka/ProducerAbout"
-	"github.com/jilin7105/ebase/logger"
 	"time"
+
+	"github.com/Flyingmn/ebase/config"
+	"github.com/Flyingmn/ebase/kafka/ProducerAbout"
+	"github.com/Flyingmn/ebase/logger"
+	"github.com/Shopify/sarama"
 )
 
 func newKafkaProducer(config config.KafkaProducerConfig) (*ProducerAbout.KafkaProducer, error) {

@@ -1,10 +1,11 @@
 package EbaseGinResponse
 
 import (
-	"github.com/gin-gonic/gin"
-	"github.com/jilin7105/ebase/logger"
-	"github.com/jilin7105/ebase/util/LinkTracking"
 	"net/http"
+
+	"github.com/Flyingmn/ebase/logger"
+	"github.com/Flyingmn/ebase/util/LinkTracking"
+	"github.com/gin-gonic/gin"
 )
 
 var Default = &response{}

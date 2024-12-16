@@ -2,11 +2,12 @@ package main
 
 import (
 	"context"
-	"github.com/Shopify/sarama"
-	"github.com/jilin7105/ebase"
-	"github.com/jilin7105/ebase/kafka/ConsumerAbout"
 	"log"
 	"os"
+
+	"github.com/Flyingmn/ebase"
+	"github.com/Flyingmn/ebase/kafka/ConsumerAbout"
+	"github.com/Shopify/sarama"
 )
 
 //
@@ -40,7 +41,7 @@ func setup() error {
 	return nil
 }
 
-//使用go run main.go  启动测试服务
+// 使用go run main.go  启动测试服务
 func main() {
 	path, _ := os.Getwd()
 

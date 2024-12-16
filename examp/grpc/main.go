@@ -3,14 +3,15 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/jilin7105/ebase"
-	"github.com/jilin7105/ebase/examp/grpc/proto/user"
-	"github.com/jilin7105/ebase/logger"
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/metadata"
 	"log"
 	"os"
 	"time"
+
+	"github.com/Flyingmn/ebase"
+	"github.com/Flyingmn/ebase/examp/grpc/proto/user"
+	"github.com/Flyingmn/ebase/logger"
+	"google.golang.org/grpc"
+	"google.golang.org/grpc/metadata"
 )
 
 type AuthService struct {
@@ -67,7 +68,7 @@ func (a AuthClr) Register(ctx context.Context, in *user.RegisterRequest) (*user.
 	panic("implement me")
 }
 
-//使用go run main.go  启动测试服务
+// 使用go run main.go  启动测试服务
 func main() {
 	path, _ := os.Getwd()
 	ebase.SetProjectPath(path)

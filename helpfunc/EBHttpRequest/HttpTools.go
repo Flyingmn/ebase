@@ -2,7 +2,8 @@ package EBHttpRequest
 
 import (
 	"context"
-	"github.com/jilin7105/ebase/util/LinkTracking"
+
+	"github.com/Flyingmn/ebase/util/LinkTracking"
 	"github.com/levigross/grequests"
 )
 

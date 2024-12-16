@@ -1,4 +1,4 @@
-module github.com/jilin7105/ebase
+module github.com/Flyingmn/ebase
 
 go 1.21
 

@@ -3,10 +3,11 @@ package ConsumerAbout
 import (
 	"context"
 	"fmt"
-	"github.com/jilin7105/ebase/config"
-	"github.com/jilin7105/ebase/logger"
 	"log"
 	"time"
+
+	"github.com/Flyingmn/ebase/config"
+	"github.com/Flyingmn/ebase/logger"
 
 	"github.com/Shopify/sarama"
 )

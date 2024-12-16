@@ -1,14 +1,15 @@
 package ebasehttp
 
 import (
-	"github.com/gin-gonic/gin"
-	"github.com/jilin7105/ebase/config"
-	"github.com/stretchr/testify/assert"
 	"net/http"
 	"net/http/httptest"
 	"sync"
 	"testing"
 	"time"
+
+	"github.com/Flyingmn/ebase/config"
+	"github.com/gin-gonic/gin"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestInitHttp(t *testing.T) {

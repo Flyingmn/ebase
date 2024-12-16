@@ -13,13 +13,13 @@
 要使用`ebase`，首先需要下载和安装Go。然后，可以使用`go get`命令下载并安装`ebase`：
 
 ```bash
-go get github.com/jilin7105/ebase
+go get github.com/Flyingmn/ebase
 ```
 ### 方式 2
 
 ```bash
 # 下载并安装工具包
-go install github.com/jilin7105/ebasetools 
+go install github.com/Flyingmn/ebasetools 
 
 # 创建一个名为my-api-project的新项目   --type=  "HTTP", "KAFKA", "GRPC", "TASK"  
 # TASK => 定时任务项目 
@@ -41,7 +41,7 @@ ebasetools create --type=HTTP --name=my-api-project
 在代码中，当需要打印日志时，可以使用logger：
 
 ```go
-import "github.com/jilin7105/ebase/logger"
+import "github.com/Flyingmn/ebase/logger"
 
 logger.Info("This is an info log.")
 logger.Debug("This is a debug log.")
@@ -72,7 +72,7 @@ logger.Infow("hello world", "name", "zhangsan", "age", 18)
 
 在代码中使用数据库
 ```go
-import "github.com/jilin7105/ebase"
+import "github.com/Flyingmn/ebase"
 db := ebase.GetDB("db_name")
 //此处返回gorm.db对象
 if db == nil {
@@ -89,7 +89,7 @@ db.First(&product, 1)
 
 在代码中使用redis
 ```go
-import "github.com/jilin7105/ebase"
+import "github.com/Flyingmn/ebase"
 rdb := ebase.GetRedis("redis_name")
 if rdb == nil {
     panic("redis 不存在")
@@ -105,7 +105,7 @@ w.Write([]byte(fmt.Sprintf("score的值: %v", val)))
 ```go
 import (
     "github.com/Shopify/sarama"
-	"github.com/jilin7105/ebase"
+	"github.com/Flyingmn/ebase"
 )
 kp := *ebase.GetKafka("Producer_name")
 if kp == nil {
@@ -166,7 +166,7 @@ micro : # 微服务相关配置  （非必须）
 ```go
 import (
 
-"github.com/jilin7105/ebase/helpfunc/EBHttpRequest"
+"github.com/Flyingmn/ebase/helpfunc/EBHttpRequest"
 
 "github.com/levigross/grequests"
 
@@ -187,7 +187,7 @@ EBHttpRequest.Get(context, "http://127.0.0.1:9999/f", nil)
 
 ### Gin 统一返回封装
 ```go
-import "github.com/jilin7105/ebase/helpfunc/EBHttpRequest"
+import "github.com/Flyingmn/ebase/helpfunc/EBHttpRequest"
 //返回分页数据
 EbaseGinResponse.PageOK(c *gin.Context, result any, count int, pageIndex int, pageSize int, msg string)
 //常规返回
@@ -198,7 +198,7 @@ EbaseGinResponse.Error(c *gin.Context, code int, err error, msg string)
 
 ### 配置文件相关 
 
-[配置文件示例，**仅支持yml格式**](https://github.com/jilin7105/ebase/tree/main/ex.config.yml)
+[配置文件示例，**仅支持yml格式**](https://github.com/Flyingmn/ebase/tree/main/ex.config.yml)
 ```shell
  # 默认config.yml 
  # 可以通过-i 进行指定
@@ -206,11 +206,11 @@ EbaseGinResponse.Error(c *gin.Context, code int, err error, msg string)
  go build && ./{你的执行文件名称}  -i  config-online.yml 
 ```
 ### 辅助函数
-[**辅助函数文档**](https://github.com/jilin7105/ebase/tree/main/doc/helpfunc.md)
+[**辅助函数文档**](https://github.com/Flyingmn/ebase/tree/main/doc/helpfunc.md)
 
-### [在代码中 http 服务使用](https://github.com/jilin7105/ebase/tree/main/examp/httpex)
-### [在代码中 定时任务 服务使用](https://github.com/jilin7105/ebase/tree/main/examp/task)
-### [在代码中 kafka消费 服务使用](https://github.com/jilin7105/ebase/tree/main/examp/kafka)
+### [在代码中 http 服务使用](https://github.com/Flyingmn/ebase/tree/main/examp/httpex)
+### [在代码中 定时任务 服务使用](https://github.com/Flyingmn/ebase/tree/main/examp/task)
+### [在代码中 kafka消费 服务使用](https://github.com/Flyingmn/ebase/tree/main/examp/kafka)
 
 
 

@@ -2,16 +2,17 @@ package main
 
 import (
 	"fmt"
-	"github.com/gin-gonic/gin"
-	"github.com/jilin7105/ebase"
-	_ "github.com/jilin7105/ebase"
-	"github.com/jilin7105/ebase/helpfunc/EBHttpRequest"
-	"github.com/jilin7105/ebase/logger"
-	"github.com/jilin7105/ebase/util/EbaseGinResponse"
-	"github.com/levigross/grequests"
 	"log"
 	"os"
 	"path/filepath"
+
+	"github.com/Flyingmn/ebase"
+	_ "github.com/Flyingmn/ebase"
+	"github.com/Flyingmn/ebase/helpfunc/EBHttpRequest"
+	"github.com/Flyingmn/ebase/logger"
+	"github.com/Flyingmn/ebase/util/EbaseGinResponse"
+	"github.com/gin-gonic/gin"
+	"github.com/levigross/grequests"
 )
 
 func getExecutableDir() (string, error) {

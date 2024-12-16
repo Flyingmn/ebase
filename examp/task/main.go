@@ -2,12 +2,13 @@ package main
 
 import (
 	"context"
-	"github.com/jilin7105/ebase"
-	_ "github.com/jilin7105/ebase"
 	"log"
+
+	"github.com/Flyingmn/ebase"
+	_ "github.com/Flyingmn/ebase"
 )
 
-//使用go run main.go  启动测试服务
+// 使用go run main.go  启动测试服务
 func main() {
 
 	ebase.Init()

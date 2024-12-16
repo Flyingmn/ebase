@@ -4,10 +4,11 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+
+	"github.com/Flyingmn/ebase/config"
+	"github.com/Flyingmn/ebase/kafka/ProducerAbout"
+	"github.com/Flyingmn/ebase/logger"
 	"github.com/gin-gonic/gin"
-	"github.com/jilin7105/ebase/config"
-	"github.com/jilin7105/ebase/kafka/ProducerAbout"
-	"github.com/jilin7105/ebase/logger"
 )
 
 // 全局配置

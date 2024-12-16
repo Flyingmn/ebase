@@ -1,7 +1,7 @@
 # 大文件上传
 ```go
     imports(
-        "github.com/jilin7105/ebase/helpfunc"
+        "github.com/Flyingmn/ebase/helpfunc"
 		) 
 	params, err := helpfunc.UploadBigFileWithParams(
 		"https://uploadapi_url_path",

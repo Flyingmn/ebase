@@ -1,7 +1,7 @@
 package ebase
 
 import (
-	"github.com/jilin7105/ebase/util/LinkTracking"
+	"github.com/Flyingmn/ebase/util/LinkTracking"
 )
 
 func (eb *Eb) initLinkTracking() {

@@ -2,7 +2,8 @@ package ebase
 
 import (
 	"fmt"
-	"github.com/jilin7105/ebase/logger"
+
+	"github.com/Flyingmn/ebase/logger"
 	"gorm.io/driver/postgres"
 
 	_ "github.com/lib/pq"

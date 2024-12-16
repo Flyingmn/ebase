@@ -2,12 +2,13 @@ package ebase
 
 import (
 	std_ck "github.com/ClickHouse/clickhouse-go/v2"
-	"github.com/jilin7105/ebase/config"
-	"github.com/jilin7105/ebase/logger"
+	"github.com/Flyingmn/ebase/config"
+	"github.com/Flyingmn/ebase/logger"
 	"gorm.io/driver/clickhouse"
 
-	"gorm.io/gorm"
 	"time"
+
+	"gorm.io/gorm"
 )
 
 func newCk(ckc config.ClickHouseConfig) (db *gorm.DB, err error) {

@@ -2,12 +2,13 @@ package main
 
 import (
 	"fmt"
-	"github.com/gin-gonic/gin"
-	"github.com/jilin7105/ebase"
-	_ "github.com/jilin7105/ebase"
 	"log"
 	"os"
 	"path/filepath"
+
+	"github.com/Flyingmn/ebase"
+	_ "github.com/Flyingmn/ebase"
+	"github.com/gin-gonic/gin"
 )
 
 func getExecutableDir() (string, error) {
@@ -20,7 +21,7 @@ func getExecutableDir() (string, error) {
 	return executableDir, nil
 }
 
-//使用go run main.go  启动测试服务
+// 使用go run main.go  启动测试服务
 func main() {
 	path, _ := os.Getwd()
 	ebase.SetProjectPath(path)

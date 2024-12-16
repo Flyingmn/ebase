@@ -1,8 +1,9 @@
 package ebase
 
 import (
-	"github.com/jilin7105/ebase/logger"
 	"time"
+
+	"github.com/Flyingmn/ebase/logger"
 )
 
 /**

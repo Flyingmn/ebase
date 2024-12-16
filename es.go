@@ -1,10 +1,10 @@
 package ebase
 
 import (
+	"github.com/Flyingmn/ebase/config"
+	"github.com/Flyingmn/ebase/logger"
 	esv7 "github.com/elastic/go-elasticsearch/v7"
 	esv8 "github.com/elastic/go-elasticsearch/v8"
-	"github.com/jilin7105/ebase/config"
-	"github.com/jilin7105/ebase/logger"
 )
 
 type EsEbase struct {

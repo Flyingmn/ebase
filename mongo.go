@@ -3,8 +3,9 @@ package ebase
 import (
 	"context"
 	"fmt"
-	"github.com/jilin7105/ebase/config"
-	"github.com/jilin7105/ebase/logger"
+
+	"github.com/Flyingmn/ebase/config"
+	"github.com/Flyingmn/ebase/logger"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )

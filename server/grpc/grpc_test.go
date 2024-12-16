@@ -2,10 +2,11 @@ package grpc
 
 import (
 	"context"
-	"github.com/jilin7105/ebase/config"
-	"google.golang.org/grpc/metadata"
 	"log"
 	"testing"
+
+	"github.com/Flyingmn/ebase/config"
+	"google.golang.org/grpc/metadata"
 )
 
 func TestInitRpcService(t *testing.T) {

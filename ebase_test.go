@@ -2,10 +2,11 @@ package ebase
 
 import (
 	"context"
-	"github.com/go-redis/redis/v8"
-	"github.com/jilin7105/ebase/config"
-	"gorm.io/gorm"
 	"testing"
+
+	"github.com/Flyingmn/ebase/config"
+	"github.com/go-redis/redis/v8"
+	"gorm.io/gorm"
 )
 
 func TestInitEbase(t *testing.T) {
