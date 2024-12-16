@@ -31,6 +31,8 @@ func NewKafkaConsumer(config *config.KafkaConsumerConfig) (*KafkaConsumer, error
 	saramaConfig.Consumer.Group.Session.Timeout = time.Duration(config.SessionTimeout) * time.Millisecond
 	saramaConfig.Consumer.Group.Heartbeat.Interval = time.Duration(config.HeartbeatInterval) * time.Millisecond
 
+	saramaConfig.Consumer.Offsets.AutoCommit.Interval = 100 * time.Millisecond
+
 	consumer, err := sarama.NewConsumerGroup(config.Brokers, config.GroupID, saramaConfig)
 	if err != nil {
 		return nil, err
