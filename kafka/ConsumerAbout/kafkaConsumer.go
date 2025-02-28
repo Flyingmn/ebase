@@ -36,8 +36,17 @@ func NewKafkaConsumer(config *config.KafkaConsumerConfig) (*KafkaConsumer, error
 		saramaConfig.Net.SASL.User = config.SASL_User
 		saramaConfig.Net.SASL.Password = config.SASL_Password
 		saramaConfig.Net.SASL.Handshake = config.SASL_Handshake
-		saramaConfig.Net.SASL.Mechanism = sarama.SASLMechanism(config.SASL_Mechanism)
+		
+		if config.SASL_Mechanism == "SCRAM-SHA-512" {
+			saramaConfig.Net.SASL.SCRAMClientGeneratorFunc = func() sarama.SCRAMClient { return &XDGSCRAMClient{HashGeneratorFcn: SHA512} }
+			saramaConfig.Net.SASL.Mechanism = sarama.SASLTypeSCRAMSHA512
+		} else if config.SASL_Mechanism == "SCRAM-SHA-256" {
+			saramaConfig.Net.SASL.SCRAMClientGeneratorFunc = func() sarama.SCRAMClient { return &XDGSCRAMClient{HashGeneratorFcn: SHA256} }
+			saramaConfig.Net.SASL.Mechanism = sarama.SASLTypeSCRAMSHA256
 
+		} else {
+			logger.Error("invalid SHA algorithm \"%s\": can be either \"SCRAM-SHA-256\" or \"SCRAM-SHA-512\"", config.SASL_Mechanism)
+		}
 	}
 
 	consumer, err := sarama.NewConsumerGroup(config.Brokers, config.GroupID, saramaConfig)
